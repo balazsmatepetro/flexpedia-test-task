@@ -40,7 +40,9 @@ class InvoiceItemRepository implements InvoiceItemRepositoryInterface
 
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         
-        return array_map($this->mapInvoiceItem, $result);
+        return array_map(function ($item) {
+            return $this->mapInvoiceItem($item);
+        }, $result);
     }
 
     /**
