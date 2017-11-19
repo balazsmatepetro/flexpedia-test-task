@@ -42,6 +42,22 @@ final class InvoiceItem implements InvoiceItemInterface
     private $createdAt;
 
     /**
+     * Creates a new InvoiceItem instance.
+     *
+     * @param int $id The ID of invoice item.
+     * @param string $name The name of invoice item.
+     * @param float $amount The amount of invoice item.
+     * @param DateTimeInterface $createdAt The creation date of invoice item.
+     */
+    public function __construct(int $id, string $name, float $amount, DateTimeInterface $createdAt)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->amount = $amount;
+        $this->createdAt = $createdAt;
+    }
+
+    /**
      * @inheritDoc
      */
     public function getId() : int
