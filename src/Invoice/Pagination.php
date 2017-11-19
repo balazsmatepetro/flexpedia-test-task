@@ -36,11 +36,7 @@ final class Pagination implements Countable
      * @throws InvalidArgumentException Thrown when one of the arguments is invalid.
      */
     public function __construct(array $invoices, int $size = self::DEFAULT_SIZE)
-    {
-        if (0 >= $size) {
-            throw new InvalidArgumentException('The size must be greater than zero!');
-        }
-        
+    {        
         if (empty($invoices)) {
             throw new InvalidArgumentException('The given collection cannot be empty!');
         }
@@ -49,6 +45,10 @@ final class Pagination implements Countable
             if (!is_object($invoice) || !($invoice instanceof InvoiceInterface)) {
                 throw new InvalidArgumentException('All items must be an instance of ' . InvoiceInterface::class);
             }
+        }
+
+        if (0 >= $size) {
+            throw new InvalidArgumentException('The size must be greater than zero!');
         }
 
         $this->pages = array_chunk($invoices, $size);
