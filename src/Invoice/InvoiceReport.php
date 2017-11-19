@@ -33,6 +33,7 @@ final class InvoiceReport
      * Creates a new InvoiceList instance.
      *
      * @param InvoiceRepositoryInterface $invoice The invoice repository instance.
+     * @param CsvOutput $csvOutput The CsvOutput instance.
      */
     public function __construct(InvoiceRepositoryInterface $invoice, CsvOutput $csvOutput)
     {
