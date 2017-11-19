@@ -18,6 +18,6 @@ final class Paid extends AbstractStatus
      */
     public function getName() : string
     {
-        return self::name;
+        return self::NAME;
     }
 }
