@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Flexpedia\Invoice\Entity;
 
 use DateTimeInterface;
+use Flexpedia\Invoice\Status\Paid;
 use Flexpedia\Invoice\Status\StatusInterface;
 use Flexpedia\InvoiceItem\Entity\InvoiceItemInterface;
 
@@ -171,5 +172,13 @@ final class Invoice implements InvoiceInterface
     public function getItems() : array
     {
         return $this->items;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function isPaid() : bool
+    {
+        return Paid::NAME === (string)$this->status;
     }
 }

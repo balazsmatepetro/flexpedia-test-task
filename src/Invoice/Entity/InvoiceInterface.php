@@ -77,4 +77,11 @@ interface InvoiceInterface
      * @return array[InvoiceItemInterface]
      */
     public function getItems() : array;
+
+    /**
+     * Returns true if the invoices is paid, else false.
+     *
+     * @return bool
+     */
+    public function isPaid() : bool;
 }
