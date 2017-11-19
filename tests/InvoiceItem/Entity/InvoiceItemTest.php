@@ -1,6 +1,6 @@
 <?php
 
-namespace Flexpedia\Test\InvoiceItem\Repository;
+namespace Flexpedia\Test\InvoiceItem\Entity;
 
 use DateTimeInterface;
 use DateTime;

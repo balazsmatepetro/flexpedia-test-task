@@ -1,6 +1,6 @@
 <?php
 
-namespace Flexpedia\Test\InvoiceItem\Repository;
+namespace Flexpedia\Test;
 
 use PHPUnit\Framework\TestCase;
 use Flexpedia\CsvOutput;

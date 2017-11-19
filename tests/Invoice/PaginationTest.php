@@ -1,6 +1,6 @@
 <?php
 
-namespace Flexpedia\Test\Invoice\Status;
+namespace Flexpedia\Test\Invoice;
 
 use Countable;
 use DateTime;
