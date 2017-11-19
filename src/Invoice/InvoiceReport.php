@@ -21,24 +21,15 @@ final class InvoiceReport
      * @var InvoiceRepositoryInterface
      */
     private $invoice;
-
-    /**
-     * The CSV renderer.
-     *
-     * @var CsvOutput
-     */
-    private $csvOutput;
     
     /**
      * Creates a new InvoiceList instance.
      *
      * @param InvoiceRepositoryInterface $invoice The invoice repository instance.
-     * @param CsvOutput $csvOutput The CsvOutput instance.
      */
-    public function __construct(InvoiceRepositoryInterface $invoice, CsvOutput $csvOutput)
+    public function __construct(InvoiceRepositoryInterface $invoice)
     {
         $this->invoice = $invoice;
-        $this->csvOutput = $csvOutput;
     }
 
     /**
@@ -52,7 +43,7 @@ final class InvoiceReport
             return $this->mapInvoice($invoice);
         }, $this->invoice->findAll());
 
-        return $this->csvOutput->render($data);
+        return CsvOutput::render($data);
     }
 
     /**

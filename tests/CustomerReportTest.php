@@ -5,7 +5,6 @@ namespace Flexpedia\Test;
 use DateTime;
 use Mockery;
 use PHPUnit\Framework\TestCase;
-use Flexpedia\CsvOutput;
 use Flexpedia\CustomerReport;
 use Flexpedia\Invoice\Entity\Invoice;
 use Flexpedia\Invoice\Repository\InvoiceRepositoryInterface;
@@ -69,7 +68,7 @@ class CustomerReportTest extends TestCase
             )
         ]);
 
-        $output = (new CustomerReport($repository, new CsvOutput))->__invoke();
+        $output = (new CustomerReport($repository))->__invoke();
 
         $lines = explode("\n", $output);
 

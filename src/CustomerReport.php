@@ -22,22 +22,13 @@ final class CustomerReport
     private $invoice;
     
     /**
-     * The CSV renderer.
-     *
-     * @var CsvOutput
-     */
-    private $csvOutput;
-    
-    /**
      * Creates a new CustomerReport instance.
      *
      * @param InvoiceRepositoryInterface $invoice The invoice repository instance.
-     * @param CsvOutput $csvOutput The CsvOutput instance.
      */
-    public function __construct(InvoiceRepositoryInterface $invoice, CsvOutput $csvOutput)
+    public function __construct(InvoiceRepositoryInterface $invoice)
     {
         $this->invoice = $invoice;
-        $this->csvOutput = $csvOutput;
     }
 
     /**
@@ -69,6 +60,6 @@ final class CustomerReport
             $data[$mapIndex]['outstanding'] += $isPaid ? 0 : $amount;
         }
 
-        return $this->csvOutput->render($data);
+        return CsvOutput::render($data);
     }
 }
