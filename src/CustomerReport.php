@@ -60,6 +60,7 @@ final class CustomerReport
             $data[$mapIndex]['outstanding'] += $isPaid ? 0 : $amount;
         }
 
+        // NOTE: Applying a writer interface wouldn't violate the SOLID principles!
         return CsvOutput::render($data);
     }
 }

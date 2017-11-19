@@ -43,6 +43,7 @@ final class InvoiceReport
             return $this->mapInvoice($invoice);
         }, $this->invoice->findAll());
 
+        // NOTE: Applying a writer interface wouldn't violate the SOLID principles!
         return CsvOutput::render($data);
     }
 
