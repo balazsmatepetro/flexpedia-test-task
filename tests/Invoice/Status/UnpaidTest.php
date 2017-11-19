@@ -17,26 +17,26 @@ class UnpaidTest extends TestCase
     /**
      * @var Unpaid
      */
-    private $Unpaid;
+    private $unpaid;
 
     protected function setUp()
     {
-        $this->Unpaid = new Unpaid;
+        $this->unpaid = new Unpaid;
     }
 
     public function testIsProperInstance()
     {
-        $this->assertInstanceOf(AbstractStatus::class, $this->Unpaid);
-        $this->assertInstanceOf(StatusInterface::class, $this->Unpaid);
+        $this->assertInstanceOf(AbstractStatus::class, $this->unpaid);
+        $this->assertInstanceOf(StatusInterface::class, $this->unpaid);
     }
 
     public function testGetNameReturnsTheProperName()
     {
-        $this->assertEquals(Unpaid::NAME, $this->Unpaid->getName());
+        $this->assertEquals(Unpaid::NAME, $this->unpaid->getName());
     }
 
     public function testOnStringConversionReturnsTheProperName()
     {
-        $this->assertEquals(Unpaid::NAME, (string)$this->Unpaid);
+        $this->assertEquals(Unpaid::NAME, (string)$this->unpaid);
     }
 }
